@@ -7,8 +7,11 @@ public class Employee {
     private String level;
     private String department;
 
-    public  Employee(){
-
+    public  Employee(String Emp_name, String status, String level, String department){
+        setName(Emp_name);
+        setStatus(status);
+        setLevel(level);
+        setDepartment(department);
     }
 
     public Employee(int Emp_id, String Emp_name, String status, String level, String department){
@@ -18,6 +21,11 @@ public class Employee {
         setLevel(level);
         setDepartment(department);
     }
+
+    public Employee() {
+
+    }
+
 
     public void setId(int id) {
         this.Emp_id = id;
@@ -55,6 +63,14 @@ public class Employee {
 
     public String getDepartment() {
         return department;
+    }
+
+    public String EmpInfo(){
+        System.out.println("Employee " + getName() + " with id= " + getId());
+        System.out.println("Status: " + getStatus());
+        System.out.println("Level: "+ getLevel());
+        System.out.println(getName()+ " programs in " + getDepartment() + " department");
+        return "Information about employee!";
     }
 
     @Override
